@@ -8,3 +8,5 @@ before_install:
 
 script: 
   - docker run -e CI=true siddharthsal99/docker-react npm run test
+
+# added a comment to trigger build
