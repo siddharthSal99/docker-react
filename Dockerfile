@@ -18,6 +18,8 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 COPY --from=0 /app/build /usr/share/nginx/html 
 # <- directories are found in dockerhub docs
 # doesnt need a specific startup command - taken care of by base image
+# expose instruction means to map to port 80 - the expose instruction on its own does nothing locally, but works on AWS elastic beanstalk
